@@ -162,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                     width: 50,
                     child: IconButton(
                       onPressed: () {
-                        googlecontroller.signInWithGoogle().then((user) {
+                        AuthHelper.authHelper.loginUserWithGoogle().then((value) {
                           Get.offNamed('/');
                         });
                       },
