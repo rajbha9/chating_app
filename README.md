@@ -1,19 +1,153 @@
-# chating_app
+## Chat Application Documentation
 
-A new Flutter project.
+## Table of Contents
+1. [Overview](#overview)
+2. [Features](#features)
+3. [User Guide](#user-guide)
+    1. [Getting Started](#getting-started)
+    2. [Using the Chat](#using-the-chat)
+    3. [Settings](#settings)
+4. [API Documentation](#api-documentation)
+    1. [Authentication](#authentication)
+    2. [Sending Messages](#sending-messages)
+    3. [Receiving Messages](#receiving-messages)
+    4. [User Management](#user-management)
+5. [Troubleshooting](#troubleshooting)
+6. [FAQ](#faq)
+7. [Contact Support](#contact-support)
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Overview
 
-A few resources to get you started if this is your first Flutter project:
+The Chat Application is a real-time messaging platform designed for seamless communication. It allows users to send and receive messages instantly, manage contacts, and customize their chatting experience. This documentation provides a comprehensive guide to using and understanding the features of the chat application.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+
+- **Real-time Messaging**: Send and receive messages instantly.
+- **Group Chats**: Create and manage group conversations.
+- **Media Sharing**: Share images, videos, and files.
+- **Notifications**: Receive alerts for new messages.
+- **User Profiles**: Customize user profiles with avatars and status messages.
+- **Message Search**: Quickly find past messages.
+- **Encryption**: Secure messages with end-to-end encryption.
+- **Cross-Platform**: Available on web, iOS, and Android.
+
+---
+
+## User Guide
+
+### Getting Started
+
+1. **Sign Up**
+   - Open the chat application.
+   - Click on "Sign Up."
+   - Fill in the required details (username, email, password).
+   - Click "Create Account."
+   - Verify your email if prompted.
+
+2. **Log In**
+   - Open the chat application.
+   - Enter your username and password.
+   - Click "Log In."
+
+### Using the Chat
+
+1. **Starting a New Chat**
+   - Click on the "New Chat" button.
+   - Select a contact from your list or search for a user.
+   - Type your message in the text box and hit "Send."
+
+2. **Joining a Group Chat**
+   - Click on the "Groups" tab.
+   - Select a group or click "Join Group" and enter the group code.
+
+3. **Sending Media**
+   - Click on the attachment icon (usually a paperclip).
+   - Choose the type of media (photo, video, file).
+   - Select the file from your device and click "Send."
+
+### Settings
+
+1. **Profile Settings**
+   - Go to the "Profile" tab.
+   - Click "Edit Profile."
+   - Update your avatar, status message, and other personal information.
+   - Click "Save."
+
+2. **Notification Settings**
+   - Go to the "Settings" tab.
+   - Click on "Notifications."
+   - Customize your notification preferences.
+
+---
+
+## API Documentation
+
+### Authentication
+
+- **Endpoint**: `/api/auth/login`
+  - **Method**: POST
+  - **Parameters**: 
+    - `username` (string)
+    - `password` (string)
+  - **Response**: 
+    - `token` (string): Authentication token
+
+### Sending Messages
+
+- **Endpoint**: `/api/messages/send`
+  - **Method**: POST
+  - **Headers**: 
+    - `Authorization` (string): Bearer token
+  - **Parameters**: 
+    - `recipient_id` (string): ID of the recipient
+    - `message` (string): The message content
+  - **Response**: 
+    - `message_id` (string): ID of the sent message
+
+### Receiving Messages
+
+- **Endpoint**: `/api/messages/receive`
+  - **Method**: GET
+  - **Headers**: 
+    - `Authorization` (string): Bearer token
+  - **Parameters**: None
+  - **Response**: 
+    - `messages` (array): List of messages
+
+### User Management
+
+- **Endpoint**: `/api/users`
+  - **Method**: GET
+  - **Headers**: 
+    - `Authorization` (string): Bearer token
+  - **Parameters**: None
+  - **Response**: 
+    - `users` (array): List of users
+
+---
+
+## Troubleshooting
+
+1. **Cannot Log In**
+   - Ensure your username and password are correct.
+   - Check your internet connection.
+   - Try resetting your password.
+
+2. **Messages Not Sending**
+   - Verify your internet connection.
+   - Check if the recipient is still in your contact list.
+   - Restart the application.
+
+3. **Notification Issues**
+   - Ensure notifications are enabled in the app settings.
+   - Check your device's notification settings.
+   - Restart the application.
+
+---
 ## Screenshots
 
 | Image 1 | Image 2 | Image 3 | Image 4 | Image 5 |
